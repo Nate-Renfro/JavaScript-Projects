@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    //variables
+    var price2015 = 0; //input 2015 value
+    var price2016 = 0; //input 2016 value
+    var pricediff;     //difference in price (calc
+    var prcntchange;   //% change (calc)
+    //constants
+    var BR = "<br>";   //HTML break
+    var ES = "";       //empty string
+
+    //input
+    price2015 = prompt("Enter 2015 price", ES);
+    price2016 = prompt("Enter 2016 price", ES);
+
+    price2015 = parseFloat(price2015);
+    price2016 = parseFloat(price2016);
+
+    //process
+    pricediff = price2015 - price2016;
+    prcntchange = 100.0 * (pricediff/price2015);
+
+    //output
+    document.write("The difference is: $" + pricediff + BR);
+    document.write("% change is: " + prcntchange + "%")
+
+</script>
+</body>
+</html>

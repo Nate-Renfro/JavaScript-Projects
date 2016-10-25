@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manufacturing Logic Gate Problem</title>
+    <script>
+        function process()
+        //Inputs
+        {var volume = document.getElementById("mForm").volume.value;
+         var speed = document.getElementById("mForm").speed.value;
+         var temp = document.getElementById("mForm").temp.value;}
+         //Process - 1. Volume > 1000 & Speed is </= 15 |OR| 2. Temp </= 750 & Speed > 15
+        if ((volume > 1000 && speed <= 15) || (temp <= 750 && speed > 15)){/* WHEN TRUE */ alert ("STOP PROCESSING!");}
+        else {/* WHEN FALSE */ alert("Resume...");}
+    </script>
+</head>
+<body>
+<form id="mForm" method="get">
+    <table>
+        <tr>
+            <td>
+               <label for="volume">Aprroximate Volume:</label>
+            </td>
+            <td>
+                <input type="number" name="volume" id="volume" min="800" max="1200" value="1000" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="temp">Approximate Temperature:</label>
+            </td>
+            <td>
+                <input type="number" name="temp" id="temp" min="500" max="1000" value="750" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="speed">Approximate Speed:</label>
+            </td>
+            <td>
+                <input type="number" name="speed" id="speed" min="0" max="20" value="15" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="submit" name="submit" value="Submit Quary" onclick="process()">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

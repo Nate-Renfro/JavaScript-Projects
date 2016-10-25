@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Tax Lookup</title>
+</head>
+<body>
+<script type="text/javascript">
+    // Program name: Sales Tax Lookup
+    // Purpose: Using a list, find the sales tax required
+    //   for purchases under $1.00
+    // Author: Paul Addison
+    // Date last modified: 01-Sep-2011
+    // Variables and constants
+    var cents;                   // number of cents of purchase
+    var salesTax;                // amount of sales tax
+    var BR = "<br/>";            // HTML line break tag
+    var PA = "<p/>";             // HTML paragraph tag
+    var ES = "";                 // literal empty string
+    var message;                 // Output Message
+
+    // Welcome the user, ask for the amount of purchase
+    document.write("This program looks up sales tax ");
+    document.write("for purchases under $1.00." + PA);
+    cents = prompt("Enter the amount of purchase, in cents:",ES);
+    cents = parseInt(cents);
+
+    //Add an appropriate if statement (you choose the method) to solve this problem.
+    //Here are the ranges:
+    /*
+     0 to 7 cents, no tax
+     under 22 cents, 1 penny
+     under 35 cents, 2 pennies
+     49 -> 3
+     64 -> 4
+     78 -> 5
+     92 -> 6
+     99 -> 7
+     */
+
+    // Display amount of sales tax
+    // if amount of cents was 99 cents or under,
+    // otherwise, display an error message
+        if (cents <= 7 && cents >= 0){salesTax = 0;}
+            else {if (cents < 22){salesTax = 1;}
+                else {if (cents < 35){salesTax = 2;}
+                    else {if (cents < 49){salesTax = 3;}
+                        else {if (cents < 64){salesTax = 4;}
+                            else {if (cents < 78){salesTax = 5;}
+                                else {if (cents < 92){salesTax = 6;}
+                                    else {if (cents <= 99){salesTax = 7}}}}}}}}
+
+    if (cents <= 99) {
+        document.write("Sales tax is: " + salesTax + " cent(s)." + BR);}
+    else {
+        document.write("Enter an amount less than $1.00." + BR);}
+    // Thank the user and end the program
+    document.write("Thank you!" + BR);
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type = "text/javascript">
+        //INSTRUCTIONS (Remember, use our in class code for the Television class as a guide!)
+         /*1. --DONE-- Identify the constructor and set the following properties:
+            acctType
+            acctNumber
+            lastName
+            firstName
+            acctBal
+            using the five input parameters
+         2. --DONE-- Identify the withdraw function and code it using the deposit function as a guide.
+         3. --DONE-- Identify the changeName function and update it to utilize the parameters lname and fname.
+            It should build a proper output string
+         4. --DONE-- Identify the Javascript code in the body script.
+            Add code to:
+            a. create a new Account object (call it whatever valid variable name you like)
+            b. initialize it with the following arguments:
+            i. "S" as the account type
+            ii. 1376433 as the account number
+            iii. "Dunes" as the last name
+            iv. "Sandi" as the first name
+            v. $80.00 as the balance
+            c. display the updated information using the variable */
+
+        //Constructor for Account Class
+        function Account(type, num, lName, fName, bal)
+        {//Properties
+             this.acctType = type; this.acctNumber = num; this.lastName = lName; this.firstName = fName; this.acctBal = bal;
+         //Methods
+             this.deposit = deposit; this.withdraw = withdraw;
+             this.changeName = changeName;
+             this.inquire = inquire;
+             this.displayInfo = displayInfo; this.setValues = setValues; this.clearValues = clearValues;}
+        function setValues(type, num, lName, fName, bal)
+            {this.acctType = type;
+             this.acctNumber = num;
+             this.lastName = lName;
+             this.firstName = fName;
+             this.acctBal = bal;}
+        function deposit(amt)
+            {this.acctBal = this.acctBal + amt;
+             document.write("New balance: $" + this.acctBal + BR);}
+        function withdraw(amt)
+            {this.acctBal = this.acctBal - amt;
+             document.write("New Balance: $" + this.acctBal + BR);}
+        function changeName(lName, fName)
+            {this.lastName = lName;
+             this.firstName = fName;
+             document.write("The name has been changed to " + this.firstName + "" + this.lastName + "" + BR);}
+        function inquire()
+            {document.write("Balance: $" + this.acctBal + BR);}
+        function displayInfo()
+            {document.acctform.newType.value = this.acctType;
+             document.acctform.newNumber.value = this.acctNumber;
+             document.acctform.newlName.value = this.lastName;
+             document.acctform.newfName.value = this.firstName;
+             document.acctform.newBal.value = this.acctBal;}
+        function clearValues()
+            {document.acctform.newType.value = ""
+             document.acctform.newNumber.value = ""
+             document.acctform.newlName.value = ""
+             document.acctform.newfName.value = ""
+             document.acctform.newBal.value = ""}
+    </script>
+</head>
+<body>
+<form name="acctform" action="">
+    <form name="tvform" action="">
+        <table>
+            <tr>
+                <td>
+                    <label for="newType">Account Type:</label>
+                </td>
+                <td>
+                    <input type="text" id="newType" name="newType" size = "40"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="newNumber">Account Number:</label>
+                </td>
+                <td>
+                    <input type="text" id="newNumber" name="newNumber" size="40"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="newlName">Last Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="newlName" name="newlName" size="40"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="newfName">First Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="newfName" name="newfName" size="40"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="newBal">Account Balance:</label>
+                </td>
+                <td>
+                    <input type="text" id="newBal" name="newBal" size="40"/>
+                </td>
+            </tr>
+        </table>
+
+        <input type="button" value="set values" name="setVal"
+               onclick="" size="20"/><br>
+        <input type="button" value="get values" name="getVal" onclick="" size="20"/><br>
+        <input type="button" value="clear values" name="clearVal" onclick="clearValues()" size="20"/>
+</form>
+<script type = "text/javascript">
+    //4.
+    var myAccount = new Account("", 0, "", "", 0)
+    myAccount.setValues ("S", 1376433, "Dunes", "Sandi", 80.00);
+    myAccount.displayInfo();
+    var BR = "<br />";
+            document.write("Account program." + BR);
+            document.write("This program creates an account." + BR);
+            document.write("It also modifies the account." + BR);
+            document.write("Thank you!" + BR);
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Convertion Calculator</title>
+</head>
+<style>
+html    {background: black}
+.table  {margin-left: auto; margin-right: auto;}
+.left   {margin-left: 15px; margin-right: 5px}
+.right  {margin-left: 5px; margin-right: 15px}
+.center {margin-left: 10px; margin-right: 10px}
+tr      {text-align: center;}
+img     {width: 55px; height: 175px}
+label   {font-size: large; background: -webkit-linear-gradient(#d61913, #2059d6);
+                                       -webkit-background-clip: text;
+                                       -webkit-text-fill-color: transparent;}
+.input  {width: 250px; border-color: black}
+h2      {background: -webkit-linear-gradient(#d61913, #2059d6);
+                     -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent;}
+</style>
+
+<script src="ConversionFunction.js"></script>
+
+<body>
+<table class="table">
+    <tr>
+        <td>
+            <img src="Images/Thermometer-clip-art-black-and-white-free.png">
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <h2><u>Temperature Conversion Calculator</u></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="left">
+                            <tr>
+                                <td>
+                                    <label><u>Degrees Celsius:</u></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="input" id="c" onkeyup="convert('C')">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Please enter Celsius value above</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="center"><label>Equals</label></td>
+                    <td>
+                        <table class="right">
+                            <tr>
+                                <td>
+                                    <label><u>Degrees Fahrenheit:</u></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="input" id="f" onkeyup="convert('F')">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Please enter Fahrenheit value above</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <img src="Images/Thermometer-clip-art-black-and-white-free.png">
+        </td>
+    </tr>
+</table>
+</body>
+</html>

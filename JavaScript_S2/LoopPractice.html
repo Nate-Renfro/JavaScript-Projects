@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Practice</title>
+</head>
+<body>
+<script>
+    //Purpose is to compute the min, max, and avg of a series of integers
+    var high = 0;       //for highest input
+    var low = 10000;    //for lowest input
+    var avg;            //calculated average
+    var total = 0;      //calculated total
+    var input;          //user input
+    var Z = "0";        //default "0"
+    var BR = "<br>";
+
+     try
+    {var num_inputs = prompt("Enter # of inputs > 0", Z);
+        if (parseInt(num_inputs) < 1 || isNaN(parseInt(num_inputs)))
+        {{num_inputs = alert("Please enter a numerical value > 0")}
+            {high = "Invalid"}
+            {low = "Invalid"}
+            {avg = "Invalid"}}
+        if (isNaN(parseInt(avg))){avg = "Invalid numerical value"}} //end TRY
+
+    catch (e) {num_inputs = 1;
+        alert("Input changed to 1.");}
+
+    //FOR loop
+    for (var count = 1; count <= num_inputs; count++) {
+        input = prompt("Enter value #" + count.toString() + ": ", Z);
+        input = parseInt(input);
+        //Compute current max value:
+        if (input > high) {high = input;}
+        //Compute current min value:
+        if (input < low) {low = input;}
+        //Update the Accumulator
+        total += input;} //End FOR loop
+
+   /* //DO WHILE loop
+    var count = 1;
+    do{input = prompt("Enter value #" + count.toString() + ": ", Z); input = parseInt(input);
+        //Compute current max value:
+    if (input > high){high = input;}
+        //Compute current min value:
+    if (input < low){low = input;}
+        //Update the Accumulator
+    total += input;
+    count++;} while (count <= num_inputs); */
+
+    //Compute average
+    avg = total/num_inputs;
+    document.write("Maximum: " + high + BR);
+    document.write("Minimum: " + low + BR);
+    document.write("Average: " + avg + BR);
+</script>
+</body>
+</html>

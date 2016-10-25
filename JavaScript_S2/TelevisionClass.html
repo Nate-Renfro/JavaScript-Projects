@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Television Class</title>
+    <script type="text/javascript">
+        //Constructor for Television Class:
+        function Television(manufac, diag, price)
+             {//Properties
+                this.manufacturer = manufac; this.diagonalSize = diag; this.retailPrice = price;
+
+              //Methods
+                this.setValues = setValues; this.displayInfo = displayInfo; this.clearValues = clearValues;}
+        function setValues(manufac, diag, price)
+        {this.manufacturer = manufac; this.diagonalSize = diag; this.retailPrice = price;}
+        function displayInfo()
+        {document.tvform.newPrice.value = this.retailPrice;
+         document.tvform.newSize.value = this.diagonalSize;
+         document.tvform.newManufacturer.value = this.manufacturer;}
+        function clearValues()
+              {document.tvform.newPrice.value = ""
+               document.tvform.newSize.value = ""
+               document.tvform.newManufacturer.value = ""}
+
+    </script>
+</head>
+<body>
+
+<form name="tvform" action="">
+    <table>
+        <tr>
+            <td>
+                <label for="newPrice">Price:</label>
+            </td>
+            <td>
+                <input type="text" value="new price" id="newPrice" name="newPrice" size = "40"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="newSize">Screen Size:</label>
+            </td>
+            <td>
+                <input type="text" value="new size" id="newSize" name="newSize" size="40"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="newManufacturer">Manufacturer:</label>
+            </td>
+            <td>
+                <input type="text" value="new manufacturer" id="newManufacturer" name="newManufacturer" size="40"/>
+            </td>
+        </tr>
+    </table>
+
+    <input type="button" value="set values" name="setVal"
+           onclick="" size="20"/><br>
+    <input type="button" value="get values" name="getVal" onclick="" size="20"/><br>
+    <input type="button" value="clear values" name="clearVal" onclick="clearValues()" size="20"/>
+
+</form>
+<script type="text/javascript">
+    //Instantiate an Object
+    var myFirstTV = new Television("Sony", 48, 999.99);
+    var myNextTV = new Television("", 0, 0);
+    myNextTV.setValues("LG", 60, 1299.99);
+    myFirstTV.displayInfo();
+    myNextTV.displayInfo();
+</script>
+
+</body>
+</html>

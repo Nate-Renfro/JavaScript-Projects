@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DOM Overview</title>
+    <meta name="description" content="">
+    <meta name="author" content="Your Name">
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+<form id="Form1">
+    <a name="html">HTML Tutorial</a><br>
+    <a name="css">CSS Tutorial</a><br>
+    <a name="xml">XML Tutorial</a><br>
+    <a name="js">JS Tutorial</a><br>
+</form>
+<form id="Form2">
+    First Name: <input type="text" name="fname" value="First Name" /><br/>
+    Last Name: <input type="text" name="lname" value="Last Name" /><br/>
+</form>
+
+
+
+<script type="text/javascript">
+    var BR = "<br>";
+    var ES = "";
+    document.write(document.title + BR);
+    document.title = "DOM Tutorial";
+    document.write(document.anchors[1].innerText + BR);
+    document.write(document.anchors.length + BR);
+    document.write(document.forms.length + BR);
+    document.write(document.forms[0].id + BR);
+    document.write(document.domain + BR);
+    document.write(document.URL + BR);
+
+    var x = document.getElementById("Form2");
+    for (var i = o; i < x.length; i++)
+    {document.write(x.elements[i].value);
+     document.write(BR);}
+
+    /*
+    var w = window.open();
+    w.document.open();
+    w.document.write("<h1>HOWDY!!</h1>");
+    window.location.href = "http://www.w3schools.com";
+    */
+</script>
+</body>
+</html>

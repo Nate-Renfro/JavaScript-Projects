@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- JAVASCRIPT -->
+<script type="text/javascript">
+
+    //option strict: variable must be declared
+    "use strict";
+
+    //VARIABLES
+    var qrtr1, qrtr2, qrtr3, qrtr4;     //sales inputs
+    var totsales;                       //total sales
+    var qrtravg;                        //quarterly average
+
+    //CONSTANTS
+    var ES = "";                        //Empty string
+    var BR = "<br>";                    //Line break
+    var PA = "<p>";                     //Paragraph
+
+    //Input
+    document.write("<h4>Nina's Nifty 99c Annual Report</h4>");
+    document.title = "NN99c Annual Report";
+    qrtr1 = parseFloat(prompt("Enter Q1 Sales", ES));
+    qrtr2 = parseFloat(prompt("Enter Q2 Sales", ES));
+    qrtr3 = parseFloat(prompt("Enter Q3 Sales", ES));
+    qrtr4 = parseFloat(prompt("Enter Q4 Sales", ES));
+
+    //Process
+    totsales = qrtr1 + qrtr2 + qrtr3 + qrtr4;   //Year Total
+    qrtravg = totsales / 4.0;                   //Quarterly Average
+
+    //Output
+    document.write("2015 Total Sales: $");
+    document.write(totsales.toString() + BR);
+    document.write("Avg Quarterly Sales: $");
+    document.write(qrtravg.toString() + BR);
+    document.write("Thanks!");
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DOM In Class Activity</title>
+    <meta name="description" content="">
+    <meta name="author" content="[Your Name]">
+    <style>
+        div {
+            padding:10px;
+            border:1px solid aqua;
+            background-color:#dbe8e8;
+        }
+    </style>
+</head>
+<body>
+
+<img onmouseover= "this.border=10" onmouseout = "this.border=0" src="DOM%20Practice%20Images/kitten.jpg" name="kittenImg" alt="kitten" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img onmouseover= "this.border=10" onmouseout = "this.border=0" src="DOM%20Practice%20Images/dog.jpg" name="dogImg" alt="Irish Terrier" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img onmouseover= "this.border=10" onmouseout = "this.border=0" src="DOM%20Practice%20Images/snake.jpg" name="snakeImg" alt="rattlesnake" >
+<h1>Top Top Pet Store</h1>
+<p><strong>Top Top</strong> Pet Store has the right animal for you.</p>
+<img onmouseover= "this.border=10" onmouseout = "this.border=0" src="DOM%20Practice%20Images/hamster.jpg" name="hamsterImg" alt="hampster" > <br/>
+<div id = "commands">
+    <button onclick = "document.kittenImg.style.display = 'none' "> Hide Kitten </button> &nbsp;&nbsp;
+    <button onclick = "document.kittenImg.style.display = 'inline' "> Show Kitten </button> &nbsp;&nbsp;
+    <button onclick = "document.dogImg.style.display = 'none' "> Hide Dog </button> &nbsp;&nbsp;
+    <button onclick = "document.dogImg.style.display = 'inline' "> Show Dog </button> &nbsp;&nbsp;
+    <button onclick = "document.snakeImg.style.display = 'none' "> Hide Snake </button> &nbsp;&nbsp;
+    <button onclick = "document.snakeImg.style.display = 'inline' "> Show Snake </button> &nbsp;&nbsp;
+    <button onclick = "document.hamsterImg.style.display = 'none' "> Hide Hamster </button> &nbsp;&nbsp;
+    <button onclick = "document.hamsterImg.style.display = 'inline' "> Show Hamster </button> &nbsp;&nbsp;
+</div>
+
+<script type="text/javascript">
+    /*Please reference http://www.w3schools.com/jsref/dom_obj_document.asp for additional DOM information
+     and to help you answer the following questions:
+     */
+    /*1. List two ways of accessing the HAMSTER Image object using the Document object*/
+    document.images[3].src = "DOM%20Practice%20Images/hamster.jpg";
+    document.images.namedItem("hamsterImg");
+
+    /*2. List two ways of accessing the SNAKE Image object using the Document object*/
+    document.images[2].src = "DOM%20Practice%20Images/snake.jpg";
+    document.images.namedItem("snakeImg");
+
+    /*3. Write down the JavaScript statement to set a new file "bigCat.jpg" as the src of the Kitten Image. */
+    document.images.namedItem("kittenImg").src = "DOM%20Practice%20Images/bigCat.jpg";
+    /*4. Write down the JavaScript statement to set the width of the Snake image to 200
+     */ document.images[2].width = 200;
+    /*5. Write down the JavaScript statement to change the border width of the Hamster image to 3
+     */ document.images[3].borderWidth = 3;
+    /*6. Write down the JavaScript statement to hide the Dog image. (Hint: see step #8)
+     onclick = "document.dogImg.style.display = 'none' */
+    /*7. Update the Kitten, Dog and Snake images, by adding the following event handlers:
+     onmouseover = "this.border=10" onmouseout = "this.border=0"
+     Hover over and out of each image to test that the border property is changed.
+     A thick black border should appear when hovering over the images.
+     */
+    /*	8. Next, we will add event handler code to the <button> elements.
+     a. Add the following event handler code to the "Hide Kitten" button
+     onclick = "document.kittenImg.style.display = 'none' "
+     b. Add the following event handler code to the "Show Kitten" button
+     onclick = "document.kittenImg.style.display = 'inline' "
+     c. Add the following event handler code to the "Hide Dog" button
+     onclick = "document.dogImg.style.display = 'none' "
+     d. Add the following event handler code to the "Show Dog" button
+     onclick = "document.dogImg.style.display = 'inline' "
+     */
+    /*	9. Add four <button> elements to the web page with the following captions:
+     Hide Snake
+     Show Snake
+     Hide Hamster
+     Show Hamster
+     */
+
+    /*	10. Add event handler code, similar to step 8, that will hide and show the corresponding
+     image elements when the user clicks on the buttons in step 9.
+     */
+</script>
+</body>
+</html>

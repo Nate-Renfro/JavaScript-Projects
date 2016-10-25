@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function budgetForm() {this.displayMessage = displayMessage;}
+
+    //VARIABLES
+    var rentAmt;          		//Monthly expenditure for rent
+    var foodAmt;          		//Monthly expenditure for food
+    var utilityAmt;         	//Monthly expenditure for utilities
+    var otherAmt;         		//Monthly expenditure for other
+    var totExpenses;     		//Total of monthly expenditures
+    var rentPct;            	//% of budget spent on rent
+    var foodPct;           		//% of budget spent on food
+    var utilityPct;          	//% of budget spent on utilities
+    var otherPct;          		//% of budget spent on other
+
+    //CONSTANTS
+    var ES = "";              	//Empty string
+    var BR = "<br />";    		//HTML line break
+    var PA = "<p />";     		//HTML paragraph break
+
+    var budget = new budgetForm();
+
+    function displayMessage() {
+
+// Prompt for amounts
+rentAmt = document.budgetForm.rent.value;
+rentAmt = parseFloat(rentAmt);
+foodAmt = document.budgetForm.food.value;
+foodAmt = parseFloat(foodAmt);
+utilityAmt = document.budgetForm.utility.value;
+utilityAmt = parseFloat(utilityAmt);
+otherAmt = document.budgetForm.other.value;
+otherAmt = parseFloat(otherAmt);
+
+//step 3
+totExpenses = rentAmt + foodAmt + utilityAmt + otherAmt;
+
+//step 4
+rentPct = 100.0 * (rentAmt/totExpenses);
+foodPct	= 100.0 * (foodAmt/totExpenses);
+utilityPct = 100.0 * (utilityAmt/totExpenses);
+otherPct = 100.0 * (otherAmt/totExpenses);
+
+//Total amounts + calculate percentages
+
+        alert("Total Expenses: " + totExpenses + "\n" +
+                "Rent %: " + rentPct + "\n" +
+                "Food %: " + foodPct + "\n" +
+                "Utility %: " + utilityPct + "\n" +
+                "Other %: " + otherPct);
+    }
+</script>
+
+<form name="budgetForm" action="">
+    <table>
+        <tr>
+            <td>
+                <label for="rent">Enter Rent Amount:</label>
+            </td>
+            <td>
+                <input type="text" id="rent" name="rent" size="40" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="food">Enter Food Amount:</label>
+            </td>
+            <td>
+                <input type="text" id="food" name="food" size="40" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="utility">Enter Utility Amount:</label>
+            </td>
+            <td>
+                <input type="text" id="utility" name="utility" size="40" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="other">Enter Other Amount:</label>
+            </td>
+            <td>
+                <input type="text" id="other" name="other" size="40" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" name="compute" value="Compute!" onclick="budget.displayMessage()" />
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

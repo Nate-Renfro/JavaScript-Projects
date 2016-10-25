@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+     The following code is for a small business called Buzz Buttons who
+     create novelty lapel buttons for customers.
+     Customers input some basic information about themselves and their
+     order, and the program calculates their total costs (tax, shipping, etc.)
+     Unfortunately, this code has not yet been code reviewed.
+     Please work with a group of other coders to go through this code and
+     review it.
+     You are looking for things like typos, unclear instructions to the user,
+     logic errors in the code, syntax errors, etc.
+     You might want to try running the code to find some of these errors,
+     but be warned that running the code won't catch everything!
+     You should also carefully read the comments to make sure the code
+     reflects the intention of the coder.
+     Here is some test data you can use to test your code:
+     Input 525 buttons:
+     Total for buttons = 	519.75
+     Sales Tax =			31.18
+     Shipping =			    2.00
+     Order Total =		    552.93
+     Good luck! :)
+     */
+    // Program name: Buzz Buttons
+    // Purpose: Takes order information for novelty lapel buttons
+    // Author: Paul Addison
+    // Date last modified: 23-Sep-2016
+    // Variables
+    var custName;                // customer's name for button
+    var custEmail;               // customer's email address
+    var numButtons;              // number of buttons to order
+    var buttonPriceTotal;        // total amount for buttons
+    var salesTaxAmt;             // sales tax amount
+    var orderTotal;              // total amount for order
+    var BR = "<br />";           // HTML line break tag
+    var PA = "<p />";            // HTML paragraph break tag
+    var ES = "";                 // Empty string
+    //Constants
+    var ITEM_PRICE = 0.99;       // fixed item price
+    var SALES_TAX_RATE = 0.06;   // sales tax rate
+    var SHIPPING_FEE = 2.00;     // flat rate shipping fee
+    // Welcome the user, ask for name, email and number of buttons
+    document.write("Welcome to BuzzButtons: It Starts the Buzz!" + BR);
+    custName = prompt("What name would you like on your buttons?",ES);
+    custEmail = prompt("What is your email address?",ES);
+    numButtons = prompt("How many buttons would you like (99 cents each)?",ES);
+    numButtons = parseInt(numButtons);
+    // Calculate button price, sales tax, order total, and display all information
+    //bpTotal = number times item price:
+    buttonPriceTotal = numButtons * ITEM_PRICE;
+    //Sales tax = bpTotal times tax rate
+    salesTaxAmt = buttonPriceTotal * SALES_TAX_RATE;
+    //ordTotal = bpTotal + tax + shipping fee
+    orderTotal = buttonPriceTotal + salesTaxAmt + SHIPPING_FEE;
+    document.write("Number of buttons ordered: " + numButtons.toFixed(0) + BR);
+    document.write("Total for buttons: $" + buttonPriceTotal.toFixed(2) + BR);
+    document.write("Sales tax (6%): $" + salesTaxAmt.toFixed(2) + BR);
+    document.write("Shipping fee: $" + SHIPPING_FEE.toFixed(2) + BR);
+    document.write("Total amount of order: $" + orderTotal.toFixed(2) + BR);
+    // Thank the user and end the program
+    document.write("Thank you! We will email you for shipping information." + BR);
+</script>
+</body>
+</html>

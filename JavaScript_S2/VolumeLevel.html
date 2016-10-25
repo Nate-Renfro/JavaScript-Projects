@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Volume Level</title>
+</head>
+<body>
+<script>
+    /*  1.For balancing the fill level of a vat of liquid,
+          speed of vessel conveyor, and temperature of liquid being dispensed
+          However this program focuses on the volume of liquid in vat
+
+        2.Needs to closely monitor the volume of liquid
+
+        3.Volume MUST BE between 800 and 1200
+          SHOULD BE between 900 and 1100 (inclusive)
+     */
+
+    //VARIABLES
+    var level;          //Liquid Level
+    var message;        //Output Message
+    var ES = "";        //Empty String
+    var BR = "<br>";    //Line Break
+
+    level = prompt("Enter Volume (in liters)", ES);
+    prompt = parseFloat(level);
+
+    //Handle NON-Numeric input(s) using a SINGLE-OUTCOME [if] statement
+    if (isNaN(level)){level = 0;}
+
+    //PROCESS - use a DUAL-OUTCOME [if] statement
+    if (level <= 0){message = "Invalid input, try again";}
+        else {if (level < 800){message = "Level dangerously low";}
+            else {if (level < 900){message = "Level moderately low";}
+                else {if (level <= 1100){message = "Level acceptable";}
+                    else {if (level <= 1200){message = "Level moderately high";}
+                        else {if (level > 1200){message = "Level dangerously high";}}}}}}
+    alert (message);
+
+    switch (true){case (level < 800): message = "Level is dangerously low"; break;}
+                    case (level < 900): message = "Level is moderately low"; break;
+                        case (level <= 1100): message = "Level is acceptable"; break;
+                            case (level <= 1200): message = "level is moderately high"; break;
+                                default: message = "Level is dangerously high"; break;}
+</script>
+</body>
+</html>
+
